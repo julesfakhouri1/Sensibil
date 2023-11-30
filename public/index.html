@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+</head>
+
+<body class="">
+
+    <div class="overflow-hidden bg-blue-1 scroll-smooth">
+        <!-- Header Section Start -->
+        <header class="fixed inset-x-0 top-0 z-50" x-data="{
+            open : false,  
+            hasScrolled: false,
+            scrollHeight: 0,    
+            reactOnScroll() {
+                if (this.$el.getBoundingClientRect().top < 220 && window.scrollY > 220) {
+                    this.hasScrolled = true;
+                } else {
+                    this.hasScrolled = false;
+                }
+            }
+        } 
+    " x-init="reactOnScroll(); $watch('open', value => {
+        if(open){
+            document.querySelector('html').classList.add('overflow-hidden', 'lg:overflow-y-visible')
+        }else{
+            document.querySelector('html').classList.remove('overflow-hidden', 'lg:overflow-y-visible')
+        }
+
+    })" @scroll.window="reactOnScroll()" :class="hasScrolled ? 'bg-blue-1' : 'bg-transparent xl:pt-14'">
+            <div class="container mx-auto xl:max-w-1728 xl:pr-[89px] xl:pl-[151px] px-5 md:px-8 py-5 md:py-8 xl:pb-5">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <a href="#" class="inline-block">
+                        <img src="./assets/images/logo.png" alt="sensibil-ia" class="h-12 md:h-16 xl:h-20">
+                    </a>
+
+                    <!-- Hamburg Menu -->
+                    <button class="text-white lg:hidden" @click.prevent="open = !open">
+                        <!-- Bar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-8 h-8" x-show="!open">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+
+                        <!-- Close -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-8 h-8" x-show="open">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Nav Menu -->
+                    <nav class="absolute lg:static inset-x-0 top-[86px] md:top-32 bg-blue-1 lg:bg-transparent lg:!block"
+                        x-show="open">
+                        <div class="container px-5 py-8 mx-auto md:px-8 lg:px-0 lg:py-0">
+                            <ul class="flex flex-col lg:items-center lg:flex-row space-y-7 lg:space-y-0">
+                                <li class="lg:mr-10 xl:mr-12 2xl:mr-[60px]"><a href="#news"
+                                        class="text-base text-white transition-all font-raleway md:text-lg xl:text-xl hover:opacity-90">Nous
+                                        découvrir</a></li>
+                                <li class="lg:mr-10 xl:mr-12 2xl:mr-14"><a href="#"
+                                        class="text-base text-white transition-all font-raleway md:text-lg xl:text-xl hover:opacity-90">Notre
+                                        message</a></li>
+
+                                <li class=""><a href="#"
+                                        class="text-base text-white transition-all font-raleway md:text-lg xl:text-xl hover:opacity-90">Infoxutiles</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
+
+        <!-- Heros Section Start -->
+        <main class="relative pt-48 lg:pt-[413px] pb-20 lg:pb-[168px] xl:pb-[250px]">
+            <div class="container mx-auto xl:max-w-1728 xl:pr-[89px] xl:pl-[151px] px-5 md:px-8 relative ">
+
+                <!-- Background -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <svg class="shrink-0 -translate-y-[360px] -translate-x-[400px]" width="3633" height="3121"
+                        viewBox="0 0 3633 3121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2712.74" cy="2200.74" r="650.355" transform="rotate(-135 2712.74 2200.74)"
+                            fill="transparent" />
+
+                        <circle cx="2712.74" cy="2200.74" r="650.355" transform="rotate(-135 2712.74 2200.74)"
+                            fill="url(#paint0_radial_6_6)" />
+
+                        <!-- <circle cx="2712.74" cy="2200.74" r="650.355" transform="rotate(-135 2712.74 2200.74)"
+                            class=" bounce-1" fill="url(#paint0_radial_6_6)" /> -->
+                        <circle cx="1340.08" cy="1340.08" r="949.532" transform="rotate(41.3236 1340.08 1340.08)"
+                            fill="transparent" />
+                        <circle cx="1340.08" cy="1340.08" r="949.532" transform="rotate(41.3236 1340.08 1340.08)"
+                            class="bounce-1" fill="url(#paint1_radial_6_6)" />
+                        <defs>
+                            <radialGradient id="paint0_radial_6_6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(3258.8 2112.53) rotate(-110.3) scale(662.902 575.202)">
+                                <stop stop-color="#66C4FB" />
+                                <stop offset="0.304346" stop-color="#6D7AF7" />
+                                <stop offset="0.855072" stop-color="#0B0B41" />
+                            </radialGradient>
+                            <radialGradient id="paint1_radial_6_6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(2171.65 1300.26) rotate(177.704) scale(1490.97 1490.5)">
+                                <stop stop-color="#66C4FB" />
+                                <stop offset="0.21875" stop-color="#6D7AF7" />
+                                <stop offset="0.729167" stop-color="#0B0B41" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+
+
+                <!-- Content -->
+                <div class="relative grid items-end lg:grid-cols-12">
+                    <div class="grid lg:pb-36 lg:grid-cols-12 lg:col-span-11">
+                        <div class="lg:col-span-full">
+                            <h1
+                                class="text-5xl md:text-6xl lg:text-7xl xl:text-[100px]/none font-extrabold text-white/80 mb-6 md:mb-8 xl:mb-20 font-raleway">
+                                Eveillons nos
+                                consciences</h1>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <p
+                                class="text-base md:text-xl lg:text-2xl text-white mb-8 md:mb-11 xl:mb-[72px] font-raleway ">
+                                l'IA en
+                                médecine ouvre
+                                de
+                                nouvelles perspectives, la collaboration humaine demeure essentielle pour garantir une
+                                prise
+                                en charge holistique et éthique des patients.</p>
+
+                            <a href="#questions"
+                                class="text-2xl md:text-3xl xl:text-4xl font-semibold text-white bg-light-1/10 backdrop-blur-xl rounded-28 px-[70px] py-5  font-raleway inline-block relative border-gradient ">Voir
+                                plus</a>
+                        </div>
+                    </div>
+
+                    <div class="text-center lg:text-right">
+                        <a href="#"
+                            class="inline-flex flex-col items-center mx-auto mt-8 lg:mr-0 lg:ml-auto shrink-0 lg:mt-auto">
+                            <svg class="mb-6" width="106" height="98" viewBox="0 0 106 98" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_bd_0_191)">
+                                    <path
+                                        d="M27.0192 23.8454C12.0969 37.0038 11.632 58.7641 25.9808 72.4483C40.3296 86.1324 64.0585 86.5586 78.9808 73.4002C93.9031 60.2417 94.368 38.4815 80.0192 24.7973C65.6704 11.1131 41.9415 10.6869 27.0192 23.8454Z"
+                                        fill="url(#paint0_linear_0_191)" />
+                                    <path
+                                        d="M27.0192 23.8454C12.0969 37.0038 11.632 58.7641 25.9808 72.4483C40.3296 86.1324 64.0585 86.5586 78.9808 73.4002C93.9031 60.2417 94.368 38.4815 80.0192 24.7973C65.6704 11.1131 41.9415 10.6869 27.0192 23.8454Z"
+                                        fill="url(#paint1_radial_0_191)" />
+                                </g>
+                                <g filter="url(#filter1_b_0_191)">
+                                    <path
+                                        d="M27.0192 23.8918C12.0969 37.0502 11.632 58.8105 25.9808 72.4946C40.3296 86.1788 64.0585 86.605 78.9808 73.4466C93.9031 60.2881 94.368 38.5279 80.0192 24.8437C65.6704 11.1595 41.9415 10.7333 27.0192 23.8918Z"
+                                        fill="url(#paint2_radial_0_191)" fill-opacity="0.1" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_bd_0_191" x="-34.4839" y="-35.7515" width="174.968"
+                                        height="168.749" filterUnits="userSpaceOnUse"
+                                        color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
+                                        <feComposite in2="SourceAlpha" operator="in"
+                                            result="effect1_backgroundBlur_0_191" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="4" />
+                                        <feGaussianBlur stdDeviation="2" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                        <feBlend mode="normal" in2="effect1_backgroundBlur_0_191"
+                                            result="effect2_dropShadow_0_191" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_0_191"
+                                            result="shape" />
+                                    </filter>
+                                    <filter id="filter1_b_0_191" x="5.51611" y="4.29492" width="94.9678"
+                                        height="88.7485" filterUnits="userSpaceOnUse"
+                                        color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
+                                        <feComposite in2="SourceAlpha" operator="in"
+                                            result="effect1_backgroundBlur_0_191" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_0_191"
+                                            result="shape" />
+                                    </filter>
+                                    <linearGradient id="paint0_linear_0_191" x1="26.2013" y1="67.8414" x2="70.1712"
+                                        y2="20.0021" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#66C4FB" />
+                                        <stop offset="0.510417" stop-color="#6D7AF7" />
+                                        <stop offset="0.979167" stop-color="#8F7EF7" />
+                                    </linearGradient>
+                                    <radialGradient id="paint1_radial_0_191" cx="0" cy="0" r="1"
+                                        gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(45.3496 35.6255) rotate(61.1319) scale(49.9169 51.9499)">
+                                        <stop stop-color="white" stop-opacity="0.85" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </radialGradient>
+                                    <radialGradient id="paint2_radial_0_191" cx="0" cy="0" r="1"
+                                        gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(33.9967 28.9533) rotate(43.7765) scale(62.9762 62.9751)">
+                                        <stop stop-color="white" />
+                                        <stop offset="0.290627" stop-color="#E1E3F2" />
+                                        <stop offset="0.8125" stop-color="#9298D0" />
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+
+                            <svg class="animate-bounce" width="40" height="21" viewBox="0 0 40 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M40 1.53848C40 1.21686 39.8657 0.887712 39.6051 0.640882C39.0838 0.147222 38.2308 0.147222 37.7095 0.640882L19.8677 17.5375L2.2865 0.887708C1.76523 0.394049 0.912233 0.394049 0.390959 0.887707C-0.13032 1.38137 -0.13032 2.18918 0.390959 2.68284L18.9199 20.2377C19.4412 20.7313 20.2942 20.7313 20.8155 20.2377L39.6051 2.44349C39.8736 2.18918 40 1.86759 40 1.53848Z"
+                                    fill="#F8F8F8" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Heros Section End -->
+
+
+
+        <!-- How to work Section Start -->
+        <section class="relative " id="questions">
+            <!-- Content Start -->
+            <div
+                class="container mx-auto xl:max-w-1728 xl:pr-[89px] xl:pl-[151px] px-5 md:px-8 relative pt-[280px] lg:pt-[403px] pb-[248px]">
+                <!-- background -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <img src="./assets/images/bg-1.png" alt="bg"
+                        class="min-w-[2130px] w-full min-h-fit  translate-x-[350px] translate-y-48">
+                </div>
+
+                <div class="max-w-[588px] mx-auto bg-light-1/10 backdrop-blur-xl rounded-28 border-gradient pt-[57px] pb-[30px] px-6 sm:px-[76px] relative z-20"
+                    x-data="{tab : 1, correctAns: 0}">
+
+                    <div class="relative z-10" x-show="tab === 1" style="display: none;">
+                        <h4
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            Pourquoi l'IA
+                            peut-elle être
+                            limitée dans la compréhension des nuances émotionnelles des
+                            patients ?
+                        </h4>
+
+                        <ul class="space-y-[22px] mb-6">
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.succes = true; 
+                                    setTimeout(function(){ tab = 2; this.correctAns = ++correctAns }, 500) }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="succes ? '!text-green-500' :  'text-black'">
+                                Manque de données émotionnelles
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                       setTimeout(function(){ tab = 2 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Capacité limitée d'apprentissage
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                       setTimeout(function(){ tab = 2 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'"
+                                class="px-4 py-5 text-base font-semibold text-center text-black bg-white cursor-pointer sm:text-lg/6 font-raleway">
+                                Manque de compétences en communication
+                            </li>
+                        </ul>
+
+                        <div class="text-lg font-extrabold text-right text-white sm:text-xl font-inter">1/5</div>
+                    </div>
+
+                    <div class="relative z-10" x-show="tab === 2" style="display: none;">
+                        <h4
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            Quel rôle l'IA peut-elle jouer dans la prévention des maladies ?
+
+                        </h4>
+
+                        <ul class="space-y-[22px] mb-6">
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                     setTimeout(function(){ tab = 3 }, 500) 
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                En remplaçant les vaccins
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.succes = true; 
+                                    setTimeout(function(){ tab = 3; this.correctAns = ++correctAns }, 500) }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="succes ? '!text-green-500' :  'text-black'">
+                                En analysant les facteurs de risque et en recommandant des interventions préventives
+                            </li>
+
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                     setTimeout(function(){ tab = 3 }, 500) 
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                En imprimant des organes artificiels
+                            </li>
+                        </ul>
+
+                        <div class="text-lg font-extrabold text-right text-white sm:text-xl font-inter">2/5</div>
+                    </div>
+
+                    <div class="relative z-10" x-show="tab === 3" style="display: none;">
+                        <h4
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            Quelle est l'une des principales limites de l'IA en médecine liée à la confiance des
+                            patients ?</h4>
+
+                        <ul class="space-y-[22px] mb-6">
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                    setTimeout(function(){ tab = 4 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Rapidité des diagnostics
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.succes = true; 
+                                    setTimeout(function(){ tab = 4;  this.correctAns = ++correctAns }, 500) }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="succes ? '!text-green-500' :  'text-black'">
+                                Confidentialité des données
+                            </li>
+
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                    setTimeout(function(){ tab = 4 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Précision des traitements
+                            </li>
+                        </ul>
+
+                        <div class="text-lg font-extrabold text-right text-white sm:text-xl font-inter">3/5</div>
+                    </div>
+
+                    <div class="relative z-10" x-show="tab === 4" style="display: none;">
+                        <h4
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            Pourquoi l'IA en médecine peut-elle avoir du mal avec les cas rares ou inédits ?</h4>
+
+                        <ul class="space-y-[22px] mb-6">
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.succes = true; 
+                                    setTimeout(function(){ tab = 5; this.correctAns = ++correctAns }, 500) }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="succes ? '!text-green-500' :  'text-black'">
+                                Manque de diversité dans les données d'entraînement
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true;
+                                    setTimeout(function(){ tab = 5 }, 500) 
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Préférence pour les cas courants
+                            </li>
+
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true;
+                                    setTimeout(function(){ tab = 5 }, 500) 
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Trop grande complexité algorithmique
+                            </li>
+                        </ul>
+
+                        <div class="text-lg font-extrabold text-right text-white sm:text-xl font-inter">4/5</div>
+                    </div>
+
+                    <div class="relative z-10" x-show="tab === 5" style="display: none;">
+                        <h4
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            Pourquoi l'IA peut-elle être confrontée à des problèmes de sécurité dans le domaine médical
+                            ?</h4>
+
+                        <ul class="space-y-[22px] mb-6">
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                    setTimeout(function(){ tab = 6 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Manque de compétences techniques
+                            </li>
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.error = true; 
+                                    setTimeout(function(){ tab = 6 }, 500)
+                                   }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="error ? '!text-red-500' :  'text-black'">
+                                Faible demande pour des systèmes sécurisés
+                            </li>
+
+                            <li x-data="{
+                                succes: false, 
+                                error: false,
+                                submit(){
+                                    this.succes = true; 
+                                    setTimeout(function(){ tab = 6;  this.correctAns = ++correctAns }, 500) }
+                                }" @click="submit()"
+                                class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
+                                :class="succes ? '!text-green-500' :  'text-black'">
+                                Vulnérabilité aux cyberattaques
+                            </li>
+                        </ul>
+
+                        <div class="text-lg font-extrabold text-right text-white sm:text-xl font-inter">5/5</div>
+                    </div>
+
+                    <div class="relative z-10" x-show="tab === 6" style="display: none;">
+                        <h1 class="mt-20 text-4xl text-center text-white"> Votre score</h1>
+                        <h1 class="mt-12 mb-20 font-bold text-center text-white text-7xl"><span
+                                x-text="correctAns"></span>/5</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How to work Section End -->
+
+
+        <!-- Stats Section Start -->
+        <section class="relative mx-auto max-w-1728 pb-24 md:pb-72 xl:pb-[324px]">
+            <!-- background -->
+            <svg class="absolute top-0 left-0 -translate-y-40 -translate-x-1/3 shrink-0" width="1077" height="1048"
+                viewBox="0 0 1077 1048" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_10_37)">
+                    <ellipse cx="538.5" cy="524" rx="338.5" ry="324" fill="#69B0FB" fill-opacity="0.3" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_10_37" x="0" y="0" width="1077" height="1048" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_10_37" />
+                    </filter>
+                </defs>
+            </svg>
+
+
+            <div class="container relative px-5 mx-auto xl:max-w-1390 md:px-8">
+                <div class="grid gap-10 md:grid-cols-4 lg:grid-cols-3 lg:gap-16">
+                    <div class="md:col-span-2 lg:col-span-1">
+                        <div
+                            class="px-4 py-5 flex items-center justify-center text-5xl font-medium text-center text-white/70 rounded-28 bg-1 shadow-1 border-gradient font-inter sm:text-6xl mb-9 h-[232px] relative z-10 backdrop-blur-[10px]">
+                            80%</div>
+
+                        <p class="px-4 text-base italic text-justify text-white sm:text-xl font-raleway">Les modèles
+                            d'IA peuvent prédire la survie des patients atteints de cancer avec une précision de 80 %.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-2 lg:col-span-1">
+                        <div
+                            class="px-4 py-5 flex items-center justify-center text-5xl font-medium text-center text-white/70 rounded-28 bg-1 shadow-1 border-gradient font-inter sm:text-6xl mb-9 h-[232px] relative z-10 backdrop-blur-[10px]">
+                            187.95 mld </div>
+
+                        <p class="px-4 text-base italic text-justify text-white sm:text-xl font-raleway">On estime que
+                            le marché de l'IA dans les soins de santé atteindra 187.95 milliards de dollars d'ici 2030.
+                        </p>
+                    </div>
+
+
+                    <div class="relative md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-3">
+                        <div
+                            class="px-4 py-5 flex items-center justify-center text-5xl font-medium text-center text-white/70 rounded-28 bg-1 shadow-1 border-gradient font-inter sm:text-6xl mb-9 h-[232px] relative z-10 backdrop-blur-[10px]">
+                            94%</div>
+
+                        <p class="px-4 text-base italic text-justify text-white sm:text-xl font-raleway">On 94 % des
+                            cadres de la santé pensent qu'ils ont le devoir d'utiliser l'IA de manière responsable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section End -->
+
+
+        <!-- Feature Section Start -->
+        <section
+            class="container relative px-5  mx-auto xl:max-w-1728 xl:pr-[89px] xl:pl-[151px] md:px-8 pb-20 lg:pb-[387px] ">
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div class="">
+                    <h1
+                        class="text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-[70px]/[82px] font-raleway mb-11">
+                        Prendre conscience des
+                        limites</h1>
+
+                    <p class="mb-8 text-base font-medium text-white md:text-xl xl:text-2xl font-raleway">L'IA
+                        révolutionne nos
+                        vies avec des exploits impressionnants, mais elle doit naviguer autour de défis comme des
+                        données biaisées. La réglementation, la transparence, et une collaboration éthique sont
+                        essentielles. Sensibil-IA souligne ces avancées tout en rappelant l'importance de respecter des
+                        frontières éthiques.</p>
+
+                    <p class="text-base italic font-light text-white md:text-xl xl:text-2xl font-raleway">Mais
+                        heureusement l’humain est
+                        là ... et sera toujours là. </p>
+                </div>
+                <div class="">
+                    <img src="./assets/images/video-img.png" alt="" class="w-full rounded-[60px]">
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 mt-[272px]">
+                <div class="lg:col-span-5">
+                    <img src="./assets/images/shape-1.png" alt=""
+                        class="w-full lg:-translate-x-[10%] lg:scale-105 lg:-mt-8">
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="flex items-center justify-center lg:justify-start space-x-1.5 mb-8">
+                        <span class="w-3 h-3 rounded-full shrink-0 bg-purple-2"></span>
+                        <span class="w-3 h-3 bg-white rounded-full shrink-0"></span>
+                    </div>
+
+                    <h1
+                        class="text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-[70px]/[70px] font-raleway mb-9 ">
+                        Au
+                        cœur de
+                        la médecine, </h1>
+
+                    <p
+                        class="mb-10 text-lg text-justify text-white md:text-xl xl:text-2xl/9 font-raleway max-w-[772px]">
+                        bat le pouls
+                        humain,
+                        porteur d'une sagesse inégalée et d'une compassion sans égale. Dans cet univers où la science et
+                        la technologie s'entrelacent, c'est la présence humaine qui confère un sens profond aux soins de
+                        santé. Le médecin n'est pas simplement un déchiffreur de symptômes, mais un confident, un guide,
+                        et un guérisseur. La médecine puise dans la compréhension subtile des émotions, dans la capacité
+                        à écouter les souffrances non articulées, et dans la prévenance qui transcende les simples
+                        diagnostics. </p>
+
+                    <a href="#"
+                        class="text-2xl md:text-3xl xl:text-[30px]/[35px] font-semibold text-white bg-light-1/10 backdrop-blur-xl rounded-28 px-[45px] py-5  font-raleway inline-block relative border-gradient ">Dérouler</a>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Section End -->
+
+
+        <!-- lía dans Section Start -->
+        <section class="container relative px-5 pb-5 mx-auto xl:max-w-[1492] md:px-8 mb-20 lg:mb-[312px]">
+
+            <div class="absolute inset-0 flex items-center">
+                <img src="./assets/images/humain.png" alt="" class="mx-auto max-w-">
+            </div>
+            <h1
+                class="text-5xl md:text-6xl xl:text-[70px]/[82px] font-bold font-raleway text-center text-white mb-20 md:mb-28 xl:mb-[212px] relative">
+                L'IA dans les opérations cardiaques</h1>
+
+            <div class="relative grid md:grid-cols-12 mb-28">
+                <div class="md:col-span-6 lg:col-span-5 xl:col-span-4">
+                    <p class="text-lg md:text-xl xl:text-2xl text-white/70 mb-28">“Ces dernières années,
+                        j'ai
+                        eu la
+                        chance de
+                        travailler en tandem avec des systèmes d'IA sophistiqués qui ont considérablement transformé la
+                        pratique de la chirurgie cardiaque.
+                    </p>
+                </div>
+
+                <div
+                    class="xl:col-start-9 md:col-start-8 lg:col-start-7 md:row-start-2 md:col-span-6 lg:col-span-5 xl:col-span-4">
+                    <p class="mb-24 ml-auto text-lg text-right md:text-xl xl:text-2xl text-white/70">L'IA
+                        n'est plus
+                        seulement une présence dans nos blocs opératoires, elle est devenue une partenaire précieuse
+                        dans
+                        nos efforts pour sauver des vies.”</p>
+                </div>
+
+                <div class="md:row-start-3 md:col-span-6 lg:col-span-5 xl:col-span-5">
+                    <p class="text-lg md:text-xl xl:text-2xl text-white/70 ">“Cependant,
+                        permettez-moi de souligner que derrière chaque succès, il y a une équipe de professionnels de la
+                        santé, guidée par l'expérience humaine. Les compétences chirurgicales, l'intuition, et surtout,
+                        la
+                        connexion empathique avec nos patients, restent des éléments clés dans notre pratique.”
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative text-center">
+                <h4 class="mb-2 text-base italic font-bold text-white md:text-xl xl:text-2xl">Dr Claude VAISLIC</h4>
+                <h4 class="mb-2 text-base italic font-bold md:text-xl xl:text-2xl text-white/30">Chirurgien
+                    Cardiovasculaire & ThoraciqueC</h4>
+            </div>
+
+
+        </section>
+        <!-- lía dans Section End -->
+
+
+        <!-- Testmonial Section Start -->
+        <section class="container relative px-5 pb-5 mx-auto xl:max-w-[1516px] md:px-8 mb-20 lg:mb-[336px]">
+
+            <div class="grid md:grid-cols-12">
+                <div class="md:col-span-7 md:col-start-4">
+                    <h1
+                        class="ax-w-[801px] mx-auto text-4xl md:text-5xl font-bold text-white font-raleway xl:text-[70px]/[90px] text-center mb-[77px]">
+                        Les données recueillies par l’IA en médecine</h1>
+                </div>
+                <div class="lg:col-span-5 md:col-span-8 md:col-start-3 lg:col-start-5">
+                    <p
+                        class="text-xl md:text-2xl xl:text-[33px]/10 font-medium text-white italic text-center font-raleway mb-[60px]">
+                        L’importance de la confidentialité</p>
+
+                    <p class="text-base text-justify text-white md:text-xl xl:text-2xl">Le traitement de données de
+                        santé par l’IA comporte un risque indiscutablement élevé : les données sont sensibles, elles
+                        sont collectées à grande échelle et utilisées par des algorithmes dont on ne connait pas
+                        toujours la fiabilité. L’analyse d’impact est donc non seulement obligatoire mais indispensable.
+                        <br>
+                        <br>
+                        À ce titre, conformément à l’article 32 du RGPD, le responsable de traitement est tenu de mettre
+                        en œuvre, dès la phase de conception du système d’IA, toutes les mesures techniques et
+                        organisationnelles appropriées afin de garantir un niveau de sécurité des données de santé
+                        adapté au risque.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- Testmonial Section End -->
+
+
+
+        <!-- la Section Start -->
+        <section class="container relative px-5 pb-5 mx-auto xl:max-w-1728 md:px-8 xl:pr-[89px] xl:pl-[174px] mb-20">
+
+            <svg class="absolute top-0 left-0 -translate-y-1/3 -translate-x-1/3" width="973" height="986"
+                viewBox="0 0 973 986" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_20_81)">
+                    <ellipse cx="486.5" cy="493" rx="286.5" ry="293" fill="#69B0FB" fill-opacity="0.2" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_20_81" x="0" y="0" width="973" height="986" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_20_81" />
+                    </filter>
+                </defs>
+            </svg>
+
+
+
+            <h1 class="text-2xl md:text-3xl lg:text-[40px]/[46px] text-white font-raleway font-medium mb-20 xl:mb-32">La
+                complémentarité entre l’IA et le personnel soignant</h1>
+
+
+            <div class="grid grid-cols-12 gap-x-4" x-data="{active : 1}">
+                <div class="col-span-10 lg:col-span-9">
+                    <div class="w-full">
+                        <div class="grid grid-cols-12 gap-y-20">
+                            <div class="flex transition-all duration-500 space-x-9 group"
+                                :class="active === 1 ? 'col-span-12 lg:col-span-5 lg:col-start-6 row-start-2  active blur-0' : 'col-span-12 blur-[2.5px]'"
+                                x-ref="item-1">
+                                <div class="w-px h-full mt-2 bg-white"></div>
+                                <div class="max-w-[307px] group-[.active]:max-w-[449px]">
+                                    <p
+                                        class=" text-justify text-white text-base md:text-lg xl:text-xl group-[.active]:text-xl group-[.active]:md:text-2xl group-[.active]:xl:text-3xl">
+                                        <span class="font-semibold">1 Aide
+                                            au
+                                            diagnostic</span> : L'IA peut fournir des suggestions de diagnostic basées
+                                        sur
+                                        l'analyse
+                                        de données médicales, offrant ainsi une assistance précieuse aux médecins pour
+                                        affiner
+                                        leurs
+                                        diagnostics.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex transition-all duration-500 space-x-9 group"
+                                :class="active === 2 ? 'col-span-12 lg:col-span-5 lg:col-start-6 row-start-2  active blur-0' : 'col-span-12 blur-[2.5px]'"
+                                x-ref="item-2">
+                                <div class="w-px h-full mt-2 bg-white"></div>
+                                <div class="max-w-[307px] group-[.active]:max-w-[449px]">
+                                    <p
+                                        class="text-base text-justify text-white md:text-lg xl:text-xl group-[.active]:text-xl group-[.active]:md:text-2xl group-[.active]:xl:text-3xl">
+                                        <span class="font-semibold">2 Aide
+                                            au
+                                            diagnostic</span> : L'IA peut fournir des suggestions de diagnostic basées
+                                        sur
+                                        l'analyse
+                                        de données médicales, offrant ainsi une assistance précieuse aux médecins pour
+                                        affiner
+                                        leurs
+                                        diagnostics.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="flex transition-all duration-500 space-x-9 group "
+                                :class="active === 3 ? 'col-span-12 lg:col-span-5 lg:col-start-6 row-start-2  active blur-0' : 'col-span-12 blur-[2.5px]'"
+                                x-ref="item-3">
+                                <div class="w-px h-full mt-2 bg-white"></div>
+                                <div class="max-w-[307px] group-[.active]:max-w-[449px] ">
+                                    <p
+                                        class="text-justify text-white  text-base md:text-lg xl:text-xl group-[.active]:text-xl group-[.active]:md:text-2xl group-[.active]:xl:text-3xl">
+                                        <span class="font-semibold">3 Aide
+                                            au
+                                            diagnostic</span> : L'IA peut fournir des suggestions de diagnostic basées
+                                        sur
+                                        l'analyse
+                                        de données médicales, offrant ainsi une assistance précieuse aux médecins pour
+                                        affiner
+                                        leurs
+                                        diagnostics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 ">
+                    <div class="flex flex-col space-y-9">
+                        <button @click.prevent="active === 1 ? active = 3 : active = --active">
+                            <svg width="30" height="16" viewBox="0 0 30 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.78708e-06 14.7413C2.83408e-06 14.9899 0.100704 15.2442 0.296182 15.4349C0.687139 15.8164 1.32689 15.8164 1.71784 15.4349L15.0992 2.37845L28.2851 15.2442C28.6761 15.6257 29.3158 15.6257 29.7068 15.2442C30.0977 14.8627 30.0977 14.2385 29.7068 13.8571L15.81 0.291955C15.4191 -0.0895092 14.7793 -0.0895091 14.3884 0.291955L0.296182 14.042C0.0947801 14.2385 2.73897e-06 14.487 2.78708e-06 14.7413Z"
+                                    fill="#F8F8F8" />
+                            </svg>
+                        </button>
+
+                        <button @click.prevent="active === 3 ? active = 1 : active = ++active">
+                            <svg width="30" height="16" viewBox="0 0 30 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M30 1.07264C30 0.824108 29.8993 0.56977 29.7038 0.379038C29.3129 -0.0024262 28.6731 -0.00242625 28.2822 0.379038L14.9008 13.4355L1.71488 0.569767C1.32392 0.188303 0.684175 0.188303 0.293218 0.569767C-0.0977388 0.95123 -0.0977388 1.57545 0.293218 1.95691L14.1899 15.522C14.5809 15.9035 15.2207 15.9035 15.6116 15.522L29.7038 1.77196C29.9052 1.57545 30 1.32695 30 1.07264Z"
+                                    fill="#F8F8F8" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- la Section End -->
+
+
+        <!-- Newsletter Section Start -->
+        <section id="news"
+            class="container relative px-5 pb-5 mx-auto xl:max-w-1728 md:px-8 lg:pt-[284px] lg:mb-[297px] mb-20 xl:mb-[345px]">
+            <!-- Background -->
+            <svg class="absolute top-0 left-0 translate-x-1/3 -translate-y-[10%]" width="973" height="986"
+                viewBox="0 0 973 986" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_0_207)">
+                    <ellipse cx="486.5" cy="493" rx="286.5" ry="293" fill="#69B0FB" fill-opacity="0.3" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_0_207" x="0" y="0" width="973" height="986" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_0_207" />
+                    </filter>
+                </defs>
+            </svg>
+
+
+            <div class="relative max-w-[979px] mx-auto 8">
+
+                <div
+                    class="absolute top-0 right-0 xl:-translate-y-[388px] -translate-y-[39%] translate-x-[37.2%] xl:translate-x-[360px] hidden lg:block">
+                    <img src="./assets/images/sssss 2.png" alt="" class="">
+                </div>
+                <img src="./assets/images/ssss-cut.png" alt=""
+                    class="absolute top-0 right-0 z-10 hidden translate-x-[4%] xl:translate-x-2  -translate-y-[5.2%] xl:-translate-y-6 lg:block">
+
+
+
+                <div class="bg-light-1/10 backdrop-blur-xl rounded-28 border-gradient pt-[75px] pb-24 px-8"
+                    x-data="{submit: false}">
+                    <div class="max-w-[732px] mx-auto relative" x-show="!submit">
+                        <h2 class="text-xl font-bold text-white md:text-2xl xl:text-3xl font-raleway mb-9">Notre
+                            newsletter!
+                        </h2>
+
+                        <div class="flex flex-wrap gap-4">
+                            <div class="min-w-[220px] md:min-w-[400px] grow lg:w-9/12">
+                                <input type="text"
+                                    class="rounded-md bg-white border-none px-[30px] py-3.5 text-lg md:text-xl xl:text-2xl font-inter placeholder:text-gray-1 w-full"
+                                    placeholder="Entrer votre mail">
+                            </div>
+
+                            <button @click.prevet="submit = true"
+                                class="py-3.5 px-6 text-lg md:text-xl xl:text-2xl font-inter font-semibold text-white bg-purple-3 rounded-md flex-auto">
+                                S’abonner
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="max-w-[732px] mx-auto relative w-full" x-show="submit">
+                        <h1 class="text-xl text-center text-white md:text-2xl xl:text-4xl">Merci de vous avoir inscrit
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter Section end -->
+
+
+        <!-- Testmonial Section Start -->
+        <section
+            class="container relative px-5 pb-20 mx-auto xl:max-w-1728 md:px-8 xl:pr-0 xl:pl-[204px] xl:pb-[188px] ">
+
+            <svg class="absolute bottom-0 right-0 translate-x-[70%] translate-y-3/4" width="1302" height="1302"
+                viewBox="0 0 1302 1302" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="650.74" cy="650.74" r="650.355" transform="rotate(-135 650.74 650.74)" fill="transparent" />
+                <circle cx="650.74" cy="650.74" r="650.355" transform="rotate(-135 650.74 650.74)"
+                    fill="url(#paint0_radial_22_7)" />
+                <defs>
+                    <radialGradient id="paint0_radial_22_7" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(1196.81 562.532) rotate(-110.3) scale(662.902 575.202)">
+                        <stop stop-color="#66C4FB" />
+                        <stop offset="0.304346" stop-color="#6D7AF7" />
+                        <stop offset="0.855072" stop-color="#0B0B41" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+
+            <div class="grid lg:grid-cols-12 items-center gap-y-20 gap-x-[70px]  relative">
+                <div class="lg:col-span-4">
+                    <h1 class="text-5xl md:text-6xl xl:text-[70px]/[70px] font-bold font-inter text-light-2 mb-2">Nos
+                        histoires</h1>
+                    <p class="text-white/70 text-[33px] font-medium font-raleway italic">Ils témoignent</p>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <div class="main-carousel flickity-custom"
+                        data-flickity='{ "cellAlign": "left", "contain": true, "prevNextButtons": false }'>
+                        <div
+                            class="carousel-cell min-h-[327px] w-full max-w-[588px] pb-14 pt-16 px-[38px] bg-light-1/10 backdrop-blur-xl rounded-28 flex flex-col md:flex-row gap-6 mr-8">
+                            <img src="./assets/images/img-2.png" alt=""
+                                class="w-40 md:w-[145px] h-40 mx-auto  md:h-full rounded-full md:rounded-[20px] object-cover shrink-0">
+
+                            <div class="text-center md:text-left">
+                                <h5 class="font-medium text-white text-xl/6 font-raleway">Sophie</h5>
+                                <p class="font-medium text-white text-lg/5 font-inter">38 ans </p>
+                                <p class="mb-3 font-medium text-white text-lg/5 font-inter"> A éviter un cancer du
+                                    sein
+                                </p>
+
+                                <p class="italic font-medium text-white text-base/[18px]">Lors d'un examen médical de
+                                    routine,
+                                    mon médecin a décidé d'utiliser une solution d'IA avancée pour analyser mes
+                                    résultats et détecter d'éventuels signes précoces de cancer. J'avoue que j'étais un
+                                    peu nerveuse au début, mais cette décision s'est avérée être un véritable tournant
+                                    dans ma vie.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="carousel-cell min-h-[327px] w-full max-w-[588px] pb-14 pt-16 px-[38px] bg-light-1/10 backdrop-blur-xl rounded-28 flex flex-col md:flex-row gap-6 mr-8">
+                            <img src="./assets/images/img-3.png" alt=""
+                                class="w-40 md:w-[145px] h-40 mx-auto  md:h-full rounded-full md:rounded-[20px] object-cover shrink-0">
+
+                            <div class="text-center md:text-left">
+                                <h5 class="font-medium text-white text-xl/6 font-raleway">Sandra</h5>
+                                <p class="font-medium text-white text-lg/5 font-inter">56 ans </p>
+                                <p class="mb-3 font-medium text-white text-lg/5 font-inter">Opération à coeur ouvert
+                                </p>
+
+                                <p class="italic font-medium text-white text-base/[18px]">“Je tiens à partager mon
+                                    expérience suite à l'opération du cœur que j'ai récemment subie, réalisée avec une
+                                    technologie de pointe, la chirurgie robotique assistée par ordinateur.”
+
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="carousel-cell min-h-[327px] w-full max-w-[588px] pb-14 pt-16 px-[38px] bg-light-1/10 backdrop-blur-xl rounded-28 flex flex-col md:flex-row gap-6 mr-8">
+                            <img src="./assets/images/img-2.png" alt=""
+                                class="w-40 md:w-[145px] h-40 mx-auto  md:h-full rounded-full md:rounded-[20px] object-cover shrink-0">
+
+                            <div class="text-center md:text-left">
+                                <h5 class="font-medium text-white text-xl/6 font-raleway">Sophie</h5>
+                                <p class="font-medium text-white text-lg/5 font-inter">38 ans </p>
+                                <p class="mb-3 font-medium text-white text-lg/5 font-inter"> A éviter un cancer du
+                                    sein
+                                </p>
+
+                                <p class="italic font-medium text-white text-base/[18px]">Lors d'un examen médical de
+                                    routine,
+                                    mon médecin a décidé d'utiliser une solution d'IA avancée pour analyser mes
+                                    résultats et détecter d'éventuels signes précoces de cancer. J'avoue que j'étais un
+                                    peu nerveuse au début, mais cette décision s'est avérée être un véritable tournant
+                                    dans ma vie.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="carousel-cell min-h-[327px] w-full max-w-[588px] pb-14 pt-16 px-[38px] bg-light-1/10 backdrop-blur-xl rounded-28 flex flex-col md:flex-row gap-6 mr-8">
+                            <img src="./assets/images/img-3.png" alt=""
+                                class="w-40 md:w-[145px] h-40 mx-auto  md:h-full rounded-full md:rounded-[20px] object-cover shrink-0">
+
+                            <div class="text-center md:text-left">
+                                <h5 class="font-medium text-white text-xl/6 font-raleway">Sandra</h5>
+                                <p class="font-medium text-white text-lg/5 font-inter">56 ans </p>
+                                <p class="mb-3 font-medium text-white text-lg/5 font-inter">Opération à coeur ouvert
+                                </p>
+
+                                <p class="italic font-medium text-white text-base/[18px]">“Je tiens à partager mon
+                                    expérience suite à l'opération du cœur que j'ai récemment subie, réalisée avec une
+                                    technologie de pointe, la chirurgie robotique assistée par ordinateur.”
+
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="carousel-cell min-h-[327px] w-full max-w-[588px] pb-14 pt-16 px-[38px] bg-light-1/10 backdrop-blur-xl rounded-28 flex flex-col md:flex-row gap-6 mr-8">
+                            <img src="./assets/images/img-3.png" alt=""
+                                class="w-40 md:w-[145px] h-40 mx-auto  md:h-full rounded-full md:rounded-[20px] object-cover shrink-0">
+
+                            <div class="text-center md:text-left">
+                                <h5 class="font-medium text-white text-xl/6 font-raleway">Sandra</h5>
+                                <p class="font-medium text-white text-lg/5 font-inter">56 ans </p>
+                                <p class="mb-3 font-medium text-white text-lg/5 font-inter">Opération à coeur ouvert
+                                </p>
+
+                                <p class="italic font-medium text-white text-base/[18px]">“Je tiens à partager mon
+                                    expérience suite à l'opération du cœur que j'ai récemment subie, réalisée avec une
+                                    technologie de pointe, la chirurgie robotique assistée par ordinateur.”
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testmonial Section End -->
+
+
+        <!-- Footer Section Start -->
+        <footer class="relative border-t border-white bg-blue-1">
+            <div
+                class="container relative px-5 pb-5 mx-auto xl:max-w-[1608px] md:px-8 pt-6 md:pt-10 lg:pt-14 lg:pb-[146px]">
+                <div class="grid gap-12 lg:grid-cols-12">
+                    <!-- Logo -->
+                    <div class="space-y-16 lg:space-y-[87px] lg:col-span-4">
+                        <a href="#" class="inline-block shrink-0">
+                            <img src="./assets/images/logo.png" alt="sensibil-ia" class="h-12 md:h-16 xl:h-20">
+                        </a>
+
+                        <ul class="flex items-center gap-5">
+                            <li>
+                                <a href="#" class="">
+                                    <svg width="39" height="40" viewBox="0 0 39 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21.5046 0.00197243C22.9275 -0.00362783 24.3504 0.0110399 25.773 0.0459711L26.1512 0.0599705C26.588 0.07597 27.0189 0.0959693 27.5396 0.119968C29.6143 0.219965 31.0299 0.555954 32.272 1.04994C33.5589 1.55792 34.6431 2.2459 35.7272 3.35786C36.7185 4.35704 37.4857 5.56568 37.9754 6.89974C38.4571 8.17369 38.7846 9.62764 38.8821 11.7556C38.9055 12.2876 38.925 12.7315 38.9406 13.1795L38.9523 13.5675C38.987 15.0258 39.0019 16.4846 38.9972 17.9434L38.9991 19.4353V22.0552C39.0039 23.5146 38.989 24.9741 38.9543 26.4331L38.9426 26.8211C38.927 27.269 38.9075 27.711 38.8841 28.245C38.7866 30.3729 38.4551 31.8249 37.9754 33.0988C37.4873 34.4343 36.7199 35.644 35.7272 36.6427C34.7522 37.6593 33.5732 38.4462 32.272 38.9486C31.0299 39.4426 29.6143 39.7786 27.5396 39.8786C27.0189 39.9026 26.588 39.9226 26.1512 39.9386L25.773 39.9506C24.3505 39.9862 22.9275 40.0015 21.5046 39.9966L20.05 39.9986H17.4976C16.0747 40.0035 14.6517 39.9882 13.2292 39.9526L12.851 39.9406C12.3881 39.9234 11.9253 39.9034 11.4626 39.8806C9.38794 39.7806 7.97232 39.4406 6.72828 38.9486C5.42708 38.4474 4.24847 37.6603 3.27501 36.6427C2.2826 35.6433 1.51468 34.4339 1.02482 33.0988C0.543197 31.8249 0.215614 30.3729 0.118119 28.245C0.0964028 27.7705 0.0769036 27.2958 0.059622 26.8211L0.0498728 26.4331C0.0139236 24.9741 -0.0023273 23.5147 0.00112509 22.0552V17.9434C-0.00431701 16.4846 0.00998378 15.0259 0.044023 13.5675L0.0576723 13.1795C0.0732715 12.7315 0.0927704 12.2876 0.116169 11.7556C0.213664 9.62564 0.541247 8.17569 1.02287 6.89974C1.51302 5.56502 2.28244 4.35671 3.27696 3.35986C4.24975 2.3414 5.42762 1.55307 6.72828 1.04994C7.97232 0.555954 9.38599 0.219965 11.4626 0.119968L12.851 0.0599705L13.2292 0.0499711C14.6511 0.013118 16.0733 -0.00354988 17.4956 -2.73611e-05L21.5046 0.00197243ZM19.5001 10.0016C18.2083 9.98289 16.9258 10.2277 15.727 10.7217C14.5283 11.2158 13.4372 11.9493 12.5172 12.8796C11.5973 13.81 10.8667 14.9185 10.3681 16.1409C9.86952 17.3634 9.61275 18.6752 9.61275 20.0003C9.61275 21.3254 9.86952 22.6372 10.3681 23.8596C10.8667 25.082 11.5973 26.1906 12.5172 27.1209C13.4372 28.0513 14.5283 28.7848 15.727 29.2788C16.9258 29.7729 18.2083 30.0177 19.5001 29.999C22.0859 29.999 24.5657 28.9454 26.3941 27.0701C28.2224 25.1948 29.2496 22.6514 29.2496 19.9993C29.2496 17.3472 28.2224 14.8038 26.3941 12.9285C24.5657 11.0532 22.0859 10.0016 19.5001 10.0016ZM19.5001 14.0015C20.2772 13.9868 21.0493 14.1311 21.7714 14.4259C22.4934 14.7207 23.151 15.1601 23.7056 15.7185C24.2603 16.2769 24.7008 16.9431 25.0017 17.6781C25.3025 18.413 25.4575 19.2022 25.4576 19.9993C25.4577 20.7964 25.303 21.5856 25.0024 22.3207C24.7018 23.0557 24.2615 23.722 23.707 24.2806C23.1526 24.8392 22.4951 25.2789 21.7732 25.5739C21.0512 25.869 20.2791 26.0135 19.5021 25.9991C17.9506 25.9991 16.4627 25.367 15.3657 24.2418C14.2687 23.1166 13.6524 21.5905 13.6524 19.9993C13.6524 18.408 14.2687 16.882 15.3657 15.7568C16.4627 14.6316 17.9506 13.9995 19.5021 13.9995L19.5001 14.0015ZM29.7371 7.00173C29.108 7.02756 28.5131 7.30203 28.077 7.76765C27.6408 8.23328 27.3972 8.85394 27.3972 9.49965C27.3972 10.1454 27.6408 10.766 28.077 11.2316C28.5131 11.6973 29.108 11.9717 29.7371 11.9976C30.3835 11.9976 31.0035 11.7342 31.4606 11.2654C31.9177 10.7965 32.1745 10.1607 32.1745 9.49765C32.1745 8.83463 31.9177 8.19877 31.4606 7.72994C31.0035 7.26112 30.3835 6.99773 29.7371 6.99773V7.00173Z"
+                                            fill="#F8F8F8" />
+                                    </svg>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="">
+                                    <svg width="42" height="40" viewBox="0 0 42 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M37.3333 0H4.66667C2.1 0 0 2 0 4.44444V35.5556C0 38.0022 2.1 40 4.66667 40H21V24.4444H16.3333V18.9444H21V14.3889C21 9.58 23.828 6.20222 29.7873 6.20222L33.9943 6.20667V11.9956H31.2013C28.882 11.9956 28 13.6533 28 15.1911V18.9467H33.992L32.6667 24.4444H28V40H37.3333C39.9 40 42 38.0022 42 35.5556V4.44444C42 2 39.9 0 37.3333 0Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="">
+                                    <svg width="46" height="38" viewBox="0 0 46 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M46 4.47059C44.3069 5.25294 42.4818 5.76706 40.5908 6.01294C42.5258 4.82824 44.021 2.95059 44.7247 0.692941C42.8996 1.81059 40.8767 2.59294 38.7438 3.04C37.0067 1.11765 34.566 0 31.7954 0C26.6281 0 22.4063 4.29176 22.4063 9.58941C22.4063 10.3494 22.4943 11.0871 22.6482 11.78C14.8203 11.3776 7.84991 7.55529 3.21033 1.76588C2.39675 3.17412 1.93499 4.82824 1.93499 6.57176C1.93499 9.90235 3.58413 12.8529 6.1348 14.5294C4.57361 14.5294 3.12237 14.0824 1.84704 13.4118V13.4788C1.84704 18.1282 5.10134 22.0176 9.41109 22.8894C8.02741 23.2743 6.57478 23.3279 5.1673 23.0459C5.76453 24.9514 6.93416 26.6188 8.5118 27.8136C10.0894 29.0084 11.9957 29.6706 13.9627 29.7071C10.6284 32.3904 6.4954 33.8408 2.24283 33.82C1.49522 33.82 0.74761 33.7753 0 33.6859C4.17782 36.4129 9.14723 38 14.4685 38C31.7954 38 41.3165 23.3812 41.3165 10.7071C41.3165 10.2824 41.3164 9.88 41.2945 9.45529C43.1415 8.11412 44.7247 6.41529 46 4.47059Z"
+                                            fill="#F8F8F8" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="2xl:col-span-4 lg:col-span-6 lg:col-start-8 2xl:col-start-9">
+                        <div class="flex flex-col justify-between gap-8 sm:flex-row ">
+                            <ul class="lg:text-right">
+                                <li class="mb-6 text-xl font-black text-white font-raleway">Resources</li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Communautés</a>
+                                </li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Deviens
+                                        partenaire</a></li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Documents</a>
+                                </li>
+                            </ul>
+
+                            <ul class="lg:text-right">
+                                <li class="mb-6 text-xl font-black text-white font-raleway">Support</li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Sensibil-ia</a>
+                                </li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Contact</a></li>
+                                <li class="mb-3.5"><a href="#" class="text-xl text-white font-raleway">Termes
+                                        d’utilisations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+</body>
+
+</html>
