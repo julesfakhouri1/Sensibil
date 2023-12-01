@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -252,7 +252,7 @@
 
                     <div class="relative z-10" x-show="tab === 1" style="display: none;">
                         <h4
-                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[402px]">
+                            class="mb-10 text-xl font-bold text-white sm:text-2xl/7 font-raleway sm:mb-16 max-w-[22px]">
                             Pourquoi l'IA
                             peut-elle être
                             limitée dans la compréhension des nuances émotionnelles des
@@ -567,7 +567,7 @@
             <div class="grid gap-6 lg:grid-cols-2">
                 <div class="">
                     <h1
-                        class="text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-[70px]/[82px] font-raleway mb-11">
+                        class="text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-[70px] font-raleway mb-11">
                         Prendre conscience des
                         limites</h1>
 
@@ -864,12 +864,12 @@
 
                         <div class="flex flex-wrap gap-4">
                             <div class="min-w-[220px] md:min-w-[400px] grow lg:w-9/12">
-                                <input type="text"
-                                    class="rounded-md bg-white border-none px-[30px] py-3.5 text-lg md:text-xl xl:text-2xl font-inter placeholder:text-gray-1 w-full"
-                                    placeholder="Entrer votre mail">
+                                <input type="email"
+                                       class="rounded-md bg-white border-none px-[30px] py-3.5 text-lg md:text-xl xl:text-2xl font-inter placeholder:text-gray-1 w-full"
+                                       placeholder="Entrer votre mail"
+                                       required>
                             </div>
-
-                            <button @click.prevet="submit = true"
+                            <button @click.prevent="submit = true"
                                 class="py-3.5 px-6 text-lg md:text-xl xl:text-2xl font-inter font-semibold text-white bg-purple-3 rounded-md flex-auto">
                                 S’abonner
                             </button>
