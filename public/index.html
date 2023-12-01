@@ -20,9 +20,9 @@
     <div class="overflow-hidden bg-blue-1 scroll-smooth">
         <!-- Header Section Start -->
         <header class="fixed inset-x-0 top-0 z-50" x-data="{
-            open : false,  
+            open : false,
             hasScrolled: false,
-            scrollHeight: 0,    
+            scrollHeight: 0,
             reactOnScroll() {
                 if (this.$el.getBoundingClientRect().top < 220 && window.scrollY > 220) {
                     this.hasScrolled = true;
@@ -30,7 +30,7 @@
                     this.hasScrolled = false;
                 }
             }
-        } 
+        }
     " x-init="reactOnScroll(); $watch('open', value => {
         if(open){
             document.querySelector('html').classList.add('overflow-hidden', 'lg:overflow-y-visible')
@@ -75,7 +75,7 @@
                                         message</a></li>
 
                                 <li class=""><a href="#"
-                                        class="text-base text-white transition-all font-raleway md:text-lg xl:text-xl hover:opacity-90">Infoxutiles</a>
+                                        class="text-base text-white transition-all font-raleway md:text-lg xl:text-xl hover:opacity-90">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -130,7 +130,7 @@
                     <div class="grid lg:pb-36 lg:grid-cols-12 lg:col-span-11">
                         <div class="lg:col-span-full">
                             <h1
-                                class="text-5xl md:text-6xl lg:text-7xl xl:text-[100px]/none font-extrabold text-white/80 mb-6 md:mb-8 xl:mb-20 font-raleway">
+                                class="text-5xl md:text-6xl xl:text-[70px]/none font-extrabold text-white/80 mb-6 md:mb-8 xl:mb-20 font-raleway">
                                 Eveillons nos
                                 consciences</h1>
                         </div>
@@ -261,10 +261,10 @@
 
                         <ul class="space-y-[22px] mb-6">
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.succes = true; 
+                                    this.succes = true;
                                     setTimeout(function(){ tab = 2; this.correctAns = ++correctAns }, 500) }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -272,10 +272,10 @@
                                 Manque de données émotionnelles
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                        setTimeout(function(){ tab = 2 }, 500)
                                    }
                                 }" @click="submit()"
@@ -284,10 +284,10 @@
                                 Capacité limitée d'apprentissage
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                        setTimeout(function(){ tab = 2 }, 500)
                                    }
                                 }" @click="submit()"
@@ -310,11 +310,11 @@
 
                         <ul class="space-y-[22px] mb-6">
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
-                                     setTimeout(function(){ tab = 3 }, 500) 
+                                    this.error = true;
+                                     setTimeout(function(){ tab = 3 }, 500)
                                    }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -322,10 +322,10 @@
                                 En remplaçant les vaccins
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.succes = true; 
+                                    this.succes = true;
                                     setTimeout(function(){ tab = 3; this.correctAns = ++correctAns }, 500) }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -334,11 +334,11 @@
                             </li>
 
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
-                                     setTimeout(function(){ tab = 3 }, 500) 
+                                    this.error = true;
+                                     setTimeout(function(){ tab = 3 }, 500)
                                    }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -358,10 +358,10 @@
 
                         <ul class="space-y-[22px] mb-6">
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                     setTimeout(function(){ tab = 4 }, 500)
                                    }
                                 }" @click="submit()"
@@ -370,10 +370,10 @@
                                 Rapidité des diagnostics
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.succes = true; 
+                                    this.succes = true;
                                     setTimeout(function(){ tab = 4;  this.correctAns = ++correctAns }, 500) }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -382,10 +382,10 @@
                             </li>
 
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                     setTimeout(function(){ tab = 4 }, 500)
                                    }
                                 }" @click="submit()"
@@ -405,10 +405,10 @@
 
                         <ul class="space-y-[22px] mb-6">
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.succes = true; 
+                                    this.succes = true;
                                     setTimeout(function(){ tab = 5; this.correctAns = ++correctAns }, 500) }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -416,11 +416,11 @@
                                 Manque de diversité dans les données d'entraînement
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
                                     this.error = true;
-                                    setTimeout(function(){ tab = 5 }, 500) 
+                                    setTimeout(function(){ tab = 5 }, 500)
                                    }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -429,11 +429,11 @@
                             </li>
 
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
                                     this.error = true;
-                                    setTimeout(function(){ tab = 5 }, 500) 
+                                    setTimeout(function(){ tab = 5 }, 500)
                                    }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
@@ -453,10 +453,10 @@
 
                         <ul class="space-y-[22px] mb-6">
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                     setTimeout(function(){ tab = 6 }, 500)
                                    }
                                 }" @click="submit()"
@@ -465,10 +465,10 @@
                                 Manque de compétences techniques
                             </li>
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.error = true; 
+                                    this.error = true;
                                     setTimeout(function(){ tab = 6 }, 500)
                                    }
                                 }" @click="submit()"
@@ -478,10 +478,10 @@
                             </li>
 
                             <li x-data="{
-                                succes: false, 
+                                succes: false,
                                 error: false,
                                 submit(){
-                                    this.succes = true; 
+                                    this.succes = true;
                                     setTimeout(function(){ tab = 6;  this.correctAns = ++correctAns }, 500) }
                                 }" @click="submit()"
                                 class="px-4 py-5 text-base font-semibold text-center bg-white cursor-pointer sm:text-lg/6 font-raleway"
